@@ -1,4 +1,5 @@
 .App {
+  font-family: Roboto;
   text-align: center;
 }
 
@@ -32,7 +33,255 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.c-topic-header {
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 105px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #E7E7E7;
+  display: flex;
+  padding: 90px 0px 10px 0px;
+}
+
+.c-topic-article {
+  display: flex;
+}
+
+/* .c-topic-article:nth-child(3) {
+  background: #F5F4F9;
+} */
+
+/* .c-topic-article:nth-child(4) {
+  background: #5E3DB3;
+} */
+
+.c-topic-article_header {
+  color: #C2C2C2;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 42px;
+  flex: 0;
+  display: flex;
+  height: 42px;
+  align-items: center;
+}
+
+.c-topic-article-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 25px 0px;
+}
+
+.c-topic-article-container__flex {
+  flex: 1;
+}
+
+.c-topic-article_section,
+.c-topic-article_section_white-border {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 1.5px;
+  color: #000000;
+  width: 22px;
+}
+
+.c-topic-article_section:after {
+  width: 21px;
+  content: "";
+  display: block;
+  border-bottom: 5px solid #603EBE;
+  border-radius: 5px;
+  margin-top: 3px;
+}
+
+.c-topic-article_section_white-border:after {
+  width: 21px;
+  content: "";
+  display: block;
+  border-bottom: 5px solid #ffffff;
+  border-radius: 5px;
+  margin-top: 3px;
+}
+
+.c-topic-article_content,
+.c-topic-article_content-white {
+  display: flex;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+  max-width: 37.34375vw;
+  padding-top: 15px;
+}
+
+.c-topic-article_content-white {
+  color: #ffffff !important;
+}
+
+.c-topic-article_section_text {
+  margin-left: 8px;
+}
+
+.paddingTop50 {
+  padding-top: 50px;
+}
+
+.c-first-child-container {
+  display: flex;
+  width: 100%;
+}
+
+.c-first-child_content {
+  flex: 1;
+}
+
+.c-first-child_left {
+  display: flex;
+  justify-content: flex-center;
+}
+
+.c-second-child_content {
+
+  .c-topic-header,
+  .c-topic-article {
+    padding-left: 15.885416666666666vw !important;
+  }
+}
+
+.c-mobile-container {
+  margin-top: 350px;
+  .c-topic-article-container {
+    height: 258px;
+    padding: 90px 0px 0px 0px;
+    max-width: 30vw !important;
+  }
+
+  .c-topic-article_content {
+    width: 90vw;
+    max-width: 100vw !important;
+  }
+}
+
+.legend {
+  color: #000000;
+}
+
+@media only screen and (min-width: 1350px) {
+  .c-first-child_img {
+    flex: 0 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    left: 175px;
+  }
+
+  .c-first-child_img img {
+    max-width: 35.3125vw;
+    max-height: 950px;
+  }
+
+  .c-second-child_img {
+    overflow: hidden;
+    position: absolute;
+    top: 950px;
+    right: 90px;
+  }
+
+  .c-second-child_img img {
+    max-width: 47.614583333333336vw;
+    max-height: 88.29902491874323vh;
+  }
+}
+
+@media only screen and (max-width: 1350px) and (min-width: 768px) {
+  .c-topic-article_content {
+    font-size: 18px !important;
+  }
+  .c-first-child_img {
+    flex: 0 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 60px;
+    left: 0px !important;
+  }
+
+  .c-first-child_img img {
+    max-width: 518px;
+    max-height: 719px;
+  }
+
+  .c-second-child_img {
+    overflow: hidden;
+    position: absolute;
+    right: -235px;
+    top: 900px;
+  }
+
+  .c-second-child_img img {
+    max-width: 691px;
+    max-height: 568px;
+  }
+
+  .c-topic-article-container__blank {
+    flex: 0% 1;
+  }
+
+  .c-topic-header {
+    padding: 50px 0px 10px 0px;
+  }
+
+  .c-topic-article_content {
+    max-width: 447px;
+  }
+
+  .c-second-child_content {
+    .c-topic-header,
+    .c-topic-article {
+      padding-left: 2.885416666666666vw !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .c-topic-article_section {
+    font-size: 14px !important;
+  }
+  .c-topic-article_header {
+    font-size: 28px !important;
+  }
+  .c-topic-article_content {
+    font-size: 15px !important;
+  }
+  .c-first-child_img {
+    top: 100px;
+    position: absolute;
+    left: 32%;
+    right: 32%;
+    z-index: 99;
+  }
+
+  .c-first-child_img img {
+    width: 218px;
+    height: 281px;
+  }
+
+  .c-second-child_img {
+    /* position: relative !important; */
+  }
+
+  .c-second-child_img img {
+    max-width: 302px !important;
+    max-height: 250px !important;
+  }
+
 }
