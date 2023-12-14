@@ -44,7 +44,9 @@ function App() {
           <div className="c-topic-article-container__flex"></div>
           <div className="c-topic-article-container__flex">ATHLETS</div>
         </div>
-
+        <div className="c-first-child_img">
+          <img src={screenSize.width > 1300 ? RugPic : RugPic2} alt="" />
+        </div>
         <div className="c-topic-article" style={{ height: "210px" }}>
           <div className="c-topic-article-container__flex"></div>
           <div className="c-topic-article-container paddingTop50">
@@ -58,7 +60,10 @@ function App() {
 
         <div
           className="c-topic-article"
-          style={{ backgroundColor: "#F5F4F9", height: "267px" }}
+          style={{
+            backgroundColor: "#F5F4F9",
+            height: screenSize.width > 1300 ? "267px" : "234px",
+          }}
         >
           <div className="c-topic-article-container__flex"></div>
           <div className="c-topic-article-container">
@@ -71,7 +76,10 @@ function App() {
         </div>
         <div
           className="c-topic-article"
-          style={{ backgroundColor: "#5E3DB3", height: "238px" }}
+          style={{
+            backgroundColor: "#5E3DB3",
+            height: screenSize.width > 1300 ? "238px" : "178px",
+          }}
         >
           <div className="c-topic-article-container__flex"></div>
           <div className="c-topic-article-container">
@@ -89,6 +97,12 @@ function App() {
 
     const moblieArticle = (
       <div className="c-mobile-container">
+        <div className="c-topic-header">
+          <div className="c-topic-article-container__flex">ATHLETS</div>
+        </div>
+        <div className="c-first-child_img">
+          <img src={RugPic3} alt="" />
+        </div>
         <Carousel
           cols={1}
           rows={1}
@@ -98,7 +112,11 @@ function App() {
           showDots
           mobileBreakpoint={true}
           hideArrow={true}
-          containerStyle={{ backgroundColor: "#F5F4F9" }}
+          containerStyle={{
+            backgroundColor: "#F5F4F9",
+            transform: "translateY(-50px)",
+            height: "258px",
+          }}
         >
           <Carousel.Item>
             <div className="c-topic-article-container">
@@ -110,9 +128,7 @@ function App() {
             </div>
           </Carousel.Item>
           <Carousel.Item>
-            <div
-              className="c-topic-article-container"
-            >
+            <div className="c-topic-article-container">
               <div className="c-topic-article_header">
                 <div className="c-topic-article_section">02</div>
                 <div className="c-topic-article_section_text">
@@ -123,9 +139,7 @@ function App() {
             </div>
           </Carousel.Item>
           <Carousel.Item>
-            <div
-              className="c-topic-article-container"
-            >
+            <div className="c-topic-article-container">
               <div className="c-topic-article_header">
                 <div className="c-topic-article_section">03</div>
                 <div className="c-topic-article_section_text">GROWTH</div>
@@ -137,24 +151,22 @@ function App() {
       </div>
     );
 
-    return (
-      <>
-        <div className="c-first-child_img">
-          {screenSize.width <= 768 ? (
-            <img src={RugPic3} alt="" />
-          ) : (
-            <img src={screenSize.width > 1300 ? RugPic : RugPic2} alt="" />
-          )}
-        </div>
-        {screenSize.width <= 768 ? moblieArticle : article}
-      </>
-    );
+    return <>{screenSize.width <= 768 ? moblieArticle : article}</>;
   };
+
   const secondContent = () => {
+    const articleList = [
+      `Connect with talented athlete directly, you can watch their skills through video showreels directly from Surface 1.`,
+      `Work with recruiter to increase your chances of findingtalented athlete.`,
+      `Save your time, recruit proper athlets for your team.`,
+    ];
     const article = (
       <>
         <div className="c-topic-header">
           <div className="c-topic-article-container__flex">PLAYERS</div>
+        </div>
+        <div className="c-second-child_img">
+          <img src={BasPic} alt="" />
         </div>
         <div className="c-topic-article" style={{ height: "238px" }}>
           <div className="c-topic-article-container paddingTop50">
@@ -162,30 +174,30 @@ function App() {
               <div className="c-topic-article_section">01</div>
               <div className="c-topic-article_section_text">CONNECTION</div>
             </div>
-            <div className="c-topic-article_content">
-              Connect with talented athlete directly, you can watch their skills
-              through video showreels directly from Surface 1.
-            </div>
+            <div className="c-topic-article_content">{articleList[0]}</div>
           </div>
         </div>
         <div
           className="c-topic-article"
-          style={{ backgroundColor: "#F5F4F9", height: "210px" }}
+          style={{
+            backgroundColor: "#F5F4F9",
+            height: screenSize.width > 1300 ? "210px" : "179px",
+          }}
         >
           <div className="c-topic-article-container">
             <div className="c-topic-article_header">
               <div className="c-topic-article_section">02</div>
               <div className="c-topic-article_section_text">COLLABORATION</div>
             </div>
-            <div className="c-topic-article_content">
-              Work with recruiter to increase your chances of finding talented
-              athlete.
-            </div>
+            <div className="c-topic-article_content">{articleList[1]}</div>
           </div>
         </div>
         <div
           className="c-topic-article"
-          style={{ backgroundColor: "#090C35", height: "210px" }}
+          style={{
+            backgroundColor: "#090C35",
+            height: screenSize.width > 1300 ? "210px" : "151px",
+          }}
         >
           <div className="c-topic-article-container">
             <div className="c-topic-article_header">
@@ -198,21 +210,68 @@ function App() {
               <div className="c-topic-article_section_text">GROWTH</div>
             </div>
             <div className="c-topic-article_content-white">
-              Save your time, recruit proper athlets for your team.
+              {articleList[2]}
             </div>
           </div>
         </div>
       </>
     );
-    const moblieArticle = "";
-    return (
-      <>
+    const moblieArticle = (
+      <div className="c-mobile-container">
+        <div className="c-topic-header">
+          <div className="c-topic-article-container__flex">PLAYERS</div>
+        </div>
         <div className="c-second-child_img">
           <img src={BasPic} alt="" />
         </div>
-        {screenSize.width <= 768 ? moblieArticle : article}
-      </>
+        <Carousel
+          cols={1}
+          rows={1}
+          gap={0}
+          loop
+          dot={MyDot}
+          showDots
+          mobileBreakpoint={true}
+          hideArrow={true}
+          containerStyle={{
+            backgroundColor: "#F5F4F9",
+            transform: "translateY(-50px)",
+            height: "258px",
+          }}
+        >
+          <Carousel.Item>
+            <div className="c-topic-article-container">
+              <div className="c-topic-article_header">
+                <div className="c-topic-article_section">01</div>
+                <div className="c-topic-article_section_text">CONNECTION</div>
+              </div>
+              <div className="c-topic-article_content">{articleList[0]}</div>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="c-topic-article-container">
+              <div className="c-topic-article_header">
+                <div className="c-topic-article_section">02</div>
+                <div className="c-topic-article_section_text">
+                  COLLABORATION
+                </div>
+              </div>
+              <div className="c-topic-article_content">{articleList[1]}</div>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="c-topic-article-container">
+              <div className="c-topic-article_header">
+                <div className="c-topic-article_section">03</div>
+                <div className="c-topic-article_section_text">GROWTH</div>
+              </div>
+              <div className="c-topic-article_content">{articleList[2]}</div>
+            </div>
+          </Carousel.Item>
+        </Carousel>
+      </div>
     );
+    return <>{screenSize.width <= 768 ? moblieArticle : article}</>;
   };
   return (
     <div className="App">
@@ -234,7 +293,7 @@ const MyDot = ({ isActive }) => (
       width: "10px",
       background: isActive ? "#5C3CAF" : "#D8D8D8",
       borderRadius: "50%",
-      marginBottom: "100px",
+      marginBottom: "80px",
     }}
   ></span>
 );
